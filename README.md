@@ -10,7 +10,7 @@ This small utility was done to customize `cpufreq` tool.
 - git clone this repo to your `$HOME`.
 - `mv bash_alias .bash_aliases` in case you don't have bash_alias yet, else just add aliases for those scripts.
 - `sudo chmod +x cpufreq-set-range && sudo chmod +x cpufreq-setup-PE`
-- Alt option : we move both files > `/usr/bin/` so service-path could be `/usr/bin/cpufreq-set-range`.
+- `sudo mv cpufreq-set* /usr/bin/` so service-path could be `/usr/bin/cpufreq-set-range`.
 
 ### 3. Auto-Services
     
@@ -19,7 +19,7 @@ This small utility was done to customize `cpufreq` tool.
     Description=CPU powersave
     [Service]
     Type=oneshot
-    ExecStart=YOUR_HOME_PATH/cpufreq-set-range 400 600
+    ExecStart=usr/bin/cpufreq-set-range 400 600
     [Install]
     WantedBy=multi-user.target
     EOF
