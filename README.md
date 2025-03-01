@@ -19,7 +19,7 @@ This small utility was done to customize `cpufreq` tool.
     Description=CPU powersave
     [Service]
     Type=oneshot
-    ExecStart=usr/bin/cpufreq-set-range 400 600
+    ExecStart=usr/bin/cpufreq-set-range 400 550
     [Install]
     WantedBy=multi-user.target
     EOF
