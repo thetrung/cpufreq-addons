@@ -18,7 +18,7 @@ This small utility was done to customize `cpufreq` tool.
     Description=CPU powersave
     [Service]
     Type=oneshot
-    ExecStart=$HOME/cpufreq-set-range 400 600
+    ExecStart=%h/cpufreq-set-range 400 600
     [Install]
     WantedBy=multi-user.target
     EOF
