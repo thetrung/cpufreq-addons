@@ -20,10 +20,10 @@ MAX_CPU=$((`nproc --all` - 1))
 CPU_FOUND=$((MAX_CPU + 1))
 echo -e "${YELLOW} [INFO] Found ${CPU_FOUND} CPUs.\n" 
 MIN="400Mhz"
-MAX="600Mhz"
+MAX="550Mhz"
 P_MAX="5500Mhz"
 
-# Set everything in range [400~600] Mhz first &&
+# Set everything in range [400~550] Mhz first &&
 # Set 2 first cores as "P-core" within max range : 
 for i in $(seq 0 $MAX_CPU); do
   [[ $i -lt 2 ]] && MAX_OPTION=$P_MAX || MAX_OPTION=$MAX
