@@ -23,7 +23,7 @@ This small utility was done to customize `cpufreq` tool.
     WantedBy=multi-user.target
     EOF
 
-- Start Service :
+Start Service :
 
     sudo systemctl daemon-reload && sudo systemctl enable cpufreq.service
 
