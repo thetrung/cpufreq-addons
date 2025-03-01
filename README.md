@@ -8,7 +8,23 @@ This small utility was done to customize `cpufreq` tool.
 
 ### 2. Setup 
 - git clone this repo to your `$HOME`.
-- `mv bash_alias .bash_alias` in case you don't have bash_alias yet, else just add aliases for those scripts.
+- `mv bash_alias .bash_aliases` in case you don't have bash_alias yet, else just add aliases for those scripts.
 - `sudo chmod +x cpufreq-set-range && sudo chmod +x cpufreq-setup-PE`
+
+### 3. Auto-Services
+    
+    cat << EOF | sudo tee /etc/systemd/system/cpufreq.service
+    [Unit]
+    Description=CPU powersave
+    [Service]
+    Type=oneshot
+    ExecStart=$HOME/cpufreq-set-range 400 600
+    [Install]
+    WantedBy=multi-user.target
+    EOF
+
+- Start Service :
+
+    sudo systemctl daemon-reload && sudo systemctl enable cpufreq.service
 
 ~ Enjoy ~
