@@ -19,9 +19,17 @@ fi
 MAX_CPU=$((`nproc --all` - 1))
 CPU_FOUND=$((MAX_CPU + 1))
 echo -e "${YELLOW} [INFO] Found ${CPU_FOUND} CPUs.\n" 
-MIN="400Mhz"
-MAX="550Mhz"
-P_MAX="5500Mhz"
+#
+# I discovered that this AMD Ryzen 7840H CPU has a fixed 
+# frequency at 544Mhz for both Min/Max to be stable.
+#
+MIN="544Mhz" 
+MAX="544Mhz"
+#
+# And the maximum clock of my old lappy, which made me
+# feel comfortable was only clocked at 3.2GHz.
+#
+P_MAX="3200Mhz"
 
 # Set everything in range [400~550] Mhz first &&
 # Set 2 first cores as "P-core" within max range : 
