@@ -7,10 +7,15 @@ This small utility was done to customize `cpufreq` tool.
 - `cpufreq-setup-PE` : You want a 2P/14E-cores-like system that only run max frequency for 2 first cores then lowest frequency for the rest.
 
 ### 2. Setup 
-- git clone this repo to your `$HOME`.
-- `mv bash_alias .bash_aliases` in case you don't have bash_alias yet, else just add aliases for those scripts.
-- `sudo chmod +x cpufreq-set-range && sudo chmod +x cpufreq-setup-PE`
-- `sudo mv cpufreq-set* /usr/bin/` so service-path could be `/usr/bin/cpufreq-set-range`.
+- `git clone https://github.com/thetrung/cpufreq-addons` to your `$HOME`.
+- `mv bash_aliases .bash_aliases` (in case you don't have `.bash_aliases` yet)
+
+      sudo chmod +x cpufreq-set-range && sudo chmod +x cpufreq-setup-PE
+      sudo mv cpufreq-set* /usr/bin/
+      sudo mv cpufreq.service /etc/systemd/system/
+      sudo systemctl daemon-reload
+      sudo systemctl restart cpufreq.service
+   
 
 ### 3. Auto-Services
     
