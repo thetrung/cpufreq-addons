@@ -1,0 +1,8 @@
+[Unit]
+Description=CPU powersave
+[Service]
+Type=oneshot
+Restart=always
+ExecStart=/usr/bin/cpufreq-set-range 544 544
+[Install]
+WantedBy=multi-user.target
