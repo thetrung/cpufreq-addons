@@ -2,6 +2,6 @@
 Description=CPU comfort-zone 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/cpufreq-setup-PE 400 2200 # Adjust to resemble Intel 2670QM base frequency
+ExecStart=/usr/bin/cpufreq-set-range 400 2200 # Adjust to resemble Intel 2670QM base frequency
 [Install]
 WantedBy=multi-user.target
