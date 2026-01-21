@@ -1,7 +1,7 @@
 [Unit]
-Description=CPU powersave
+Description=CPU comfort-zone 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/cpufreq-setup-PE 400 4200
+ExecStart=/usr/bin/cpufreq-setup-PE 400 2200 # Adjust to resemble Intel 2670QM base frequency
 [Install]
 WantedBy=multi-user.target
